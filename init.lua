@@ -22,7 +22,8 @@ require("lazy").setup({
     require "plugins.telescope",
     require "plugins.bufferline",
     require "plugins.lsp",
-    require "plugins.theme"
+    require "plugins.theme",
+    require "plugins.autopairs"
 })
 vim.cmd.colorscheme "catppuccin"
 
