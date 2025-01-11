@@ -29,6 +29,13 @@ return {
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-d>'] = cmp.mapping.scroll_docs(4),
+          ['<CR>'] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.confirm({ select = true }) -- Select the first option if visible
+          else
+            fallback() -- Default <CR> behavior
+          end
+        end, { 'i', 's' }),      
         }),
         snippet = {
           expand = function(args)
